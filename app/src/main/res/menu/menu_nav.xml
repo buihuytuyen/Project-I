@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/nav_calculator">
+        <menu>
+            <item
+                android:id="@+id/nav_standard"
+                android:title="@string/nav_standard"
+                android:icon="@drawable/ic_standard"/>
+            <item
+                android:id="@+id/nav_Scientific"
+                android:title="@string/nav_scientific"
+                android:icon="@drawable/ic_scientific"/>
+            <item
+                android:id="@+id/nav_programmer"
+                android:title="@string/nav_programmer"
+                android:icon="@drawable/ic_programmer"/>
+        </menu>
+    </item>
+</menu>

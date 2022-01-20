@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="nav_calculator">Calculator</string>
+    <string name="nav_standard">Standard</string>
+    <string name="nav_scientific">Scientific</string>
+    <string name="nav_programmer">Programmer</string>
+    <string name="nav_converter">Converter</string>
+    <string name="nav_volume">Volume</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Error_div_0">Cannot divide by zero</string>
+    <string name="Invalid_input">Invalid input</string>
+    <string name="Result_is_undefined">Result is undefined</string>
+
+</resources>
