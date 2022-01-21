@@ -258,7 +258,7 @@ public class ProgrammerFragment extends Fragment {
                         String.format("%28s", Long.toBinaryString(0xFFFFFFF & b)).replaceAll(" ", "0");
             } else {
                 programmer_binScreen =
-                        String.format("%32s", Long.toBinaryString(0xFFFFFFFF & b)).replaceAll(" ", "0");
+                        String.format("%32s", Long.toBinaryString(b)).replaceAll(" ", "0");
             }
         }
     }
@@ -1099,7 +1099,7 @@ public class ProgrammerFragment extends Fragment {
                                                 String.format("%28s", Long.toBinaryString(0xFFFFFFF & b)).replaceAll(" ", "0");
                                     } else if (b <= maxDWORD) {
                                         programmer_binScreen =
-                                                String.format("%32s", Long.toBinaryString(0xFFFFFFFF & b)).replaceAll(" ", "0");
+                                                String.format("%32s", Long.toBinaryString(b)).replaceAll(" ", "0");
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
@@ -1151,7 +1151,7 @@ public class ProgrammerFragment extends Fragment {
                                                 String.format("%28s", Long.toBinaryString(0xFFFFFFF & b)).replaceAll(" ", "0");
                                     } else if (b <= maxDWORD) {
                                         programmer_binScreen =
-                                                String.format("%32s", Long.toBinaryString(0xFFFFFFFF & b)).replaceAll(" ", "0");
+                                                String.format("%32s", Long.toBinaryString(b)).replaceAll(" ", "0");
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
@@ -1203,7 +1203,7 @@ public class ProgrammerFragment extends Fragment {
                                                 String.format("%28s", Long.toBinaryString(0xFFFFFFF & b)).replaceAll(" ", "0");
                                     } else if (b <= maxDWORD) {
                                         programmer_binScreen =
-                                                String.format("%32s", Long.toBinaryString(0xFFFFFFFF & b)).replaceAll(" ", "0");
+                                                String.format("%32s", Long.toBinaryString(b)).replaceAll(" ", "0");
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
@@ -5543,7 +5543,7 @@ public class ProgrammerFragment extends Fragment {
                                     txt_programmer_screen.setText(programmer_screen);
                                     Error();
                                 } else {
-                                    Long b = Long.parseLong(balanNew.valueMath(tmp));
+                                    long b = Long.parseLong(balanNew.valueMath(tmp));
                                     b = Values(b);
                                     processString(bytes, b);
                                     programmer_screen += " × ";
@@ -5570,7 +5570,7 @@ public class ProgrammerFragment extends Fragment {
                                 programmer_screen += programmer_decScreen;
                                 String tmp = programmer_screen.replace('×', '*');
                                 tmp = tmp.replace('÷', '/');
-                                Long b = Long.parseLong(balanNew.valueMath(tmp));
+                                long b = Long.parseLong(balanNew.valueMath(tmp));
                                 b = Values(b);
                                 processString(bytes, b);
                                 programmer_screen += " × ";
@@ -5809,7 +5809,7 @@ public class ProgrammerFragment extends Fragment {
                                 programmer_screen += programmer_decScreen;
                                 String tmp = programmer_screen.replace('×', '*');
                                 tmp = tmp.replace('÷', '/');
-                                Long b = Long.parseLong(balanNew.valueMath(tmp));
+                                long b = Long.parseLong(balanNew.valueMath(tmp));
                                 b = Values(b);
                                 processString(bytes, b);
                                 programmer_screen += " ÷ ";
