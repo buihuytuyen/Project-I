@@ -490,79 +490,67 @@ public class ScientificFragment extends Fragment {
         });
 
         // ImageButton hyp
-        btn_scientific_hyp.setOnClickListener(btn_scientific_hyp->{
-            if(check_function || check_trigonometry){
-                if(check_trigonometry){
-                    layout_trigonometry.setVisibility(View.INVISIBLE);
-                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
-                    check_trigonometry = false;
+        btn_scientific_hyp.setOnClickListener(btn_scientific_hyp -> {
+            if (!check_hyp) {
+                if (!check_nd_min) {
+                    btn_scientific_sin.setImageResource(R.drawable.sinh);
+                    check_sin = "sinh";
+                    btn_scientific_cos.setImageResource(R.drawable.cosh);
+                    check_cos = "cosh";
+                    btn_scientific_tan.setImageResource(R.drawable.tanh);
+                    check_tan = "tanh";
+                    btn_scientific_cot.setImageResource(R.drawable.coth);
+                    check_cot = "coth";
+                    btn_scientific_sec.setImageResource(R.drawable.sech);
+                    check_sec = "sech";
+                    btn_scientific_csc.setImageResource(R.drawable.csch);
+                    check_csc = "csch";
                 } else {
-                    layout_function.setVisibility(View.INVISIBLE);
-                    btn_scientific_function.setImageResource(R.drawable.function);
-                    check_function = false;
+                    btn_scientific_sin.setImageResource(R.drawable.sinh_nguoc);
+                    check_sin = "sinh_nguoc";
+                    btn_scientific_cos.setImageResource(R.drawable.cosh_nguoc);
+                    check_cos = "cosh_nguoc";
+                    btn_scientific_tan.setImageResource(R.drawable.tanh_nguoc);
+                    check_tan = "tanh_nguoc";
+                    btn_scientific_cot.setImageResource(R.drawable.coth_nguoc);
+                    check_cot = "coth_nguoc";
+                    btn_scientific_sec.setImageResource(R.drawable.sech_nguoc);
+                    check_sec = "sech_nguoc";
+                    btn_scientific_csc.setImageResource(R.drawable.csch_nguoc);
+                    check_csc = "csch_nguoc";
                 }
+                check_hyp = true;
+                this.btn_scientific_hyp.setImageResource(R.drawable.hype_dam);
             } else {
-                if (!check_hyp) {
-                    if (!check_nd_min) {
-                        btn_scientific_sin.setImageResource(R.drawable.sinh);
-                        check_sin = "sinh";
-                        btn_scientific_cos.setImageResource(R.drawable.cosh);
-                        check_cos = "cosh";
-                        btn_scientific_tan.setImageResource(R.drawable.tanh);
-                        check_tan = "tanh";
-                        btn_scientific_cot.setImageResource(R.drawable.coth);
-                        check_cot = "coth";
-                        btn_scientific_sec.setImageResource(R.drawable.sech);
-                        check_sec = "sech";
-                        btn_scientific_csc.setImageResource(R.drawable.csch);
-                        check_csc = "csch";
-                    } else {
-                        btn_scientific_sin.setImageResource(R.drawable.sinh_nguoc);
-                        check_sin = "sinh_nguoc";
-                        btn_scientific_cos.setImageResource(R.drawable.cosh_nguoc);
-                        check_cos = "cosh_nguoc";
-                        btn_scientific_tan.setImageResource(R.drawable.tanh_nguoc);
-                        check_tan = "tanh_nguoc";
-                        btn_scientific_cot.setImageResource(R.drawable.coth_nguoc);
-                        check_cot = "coth_nguoc";
-                        btn_scientific_sec.setImageResource(R.drawable.sech_nguoc);
-                        check_sec = "sech_nguoc";
-                        btn_scientific_csc.setImageResource(R.drawable.csch_nguoc);
-                        check_csc = "csch_nguoc";
-                    }
-                    check_hyp = true;
-                    this.btn_scientific_hyp.setImageResource(R.drawable.hype_dam);
+                if (!check_nd_min) {
+                    btn_scientific_sin.setImageResource(R.drawable.sin);
+                    check_sin = "sin";
+                    btn_scientific_cos.setImageResource(R.drawable.cos);
+                    check_cos = "cos";
+                    btn_scientific_tan.setImageResource(R.drawable.tan);
+                    check_tan = "tan";
+                    btn_scientific_cot.setImageResource(R.drawable.cot);
+                    check_cot = "cot";
+                    btn_scientific_sec.setImageResource(R.drawable.sec);
+                    check_sec = "sec";
+                    btn_scientific_csc.setImageResource(R.drawable.csc);
+                    check_csc = "csc";
                 } else {
-                    if (!check_nd_min) {
-                        btn_scientific_sin.setImageResource(R.drawable.sin);
-                        check_sin = "sin";
-                        btn_scientific_cos.setImageResource(R.drawable.cos);
-                        check_cos = "cos";
-                        btn_scientific_tan.setImageResource(R.drawable.tan);
-                        check_tan = "tan";
-                        btn_scientific_cot.setImageResource(R.drawable.cot);
-                        check_cot = "cot";
-                        btn_scientific_sec.setImageResource(R.drawable.sec);
-                        check_sec = "sec";
-                        btn_scientific_csc.setImageResource(R.drawable.csc);
-                        check_csc = "csc";
-                    } else {
-                        btn_scientific_sin.setImageResource(R.drawable.sin_nguoc);
-                        check_sin = "sin_nguoc";
-                        btn_scientific_cos.setImageResource(R.drawable.cos_nguoc);
-                        check_cos = "cos_nguoc";
-                        btn_scientific_tan.setImageResource(R.drawable.tan_nguoc);
-                        check_tan = "tan_nguoc";
-                        btn_scientific_cot.setImageResource(R.drawable.cot_nguoc);
-                        check_cot = "cot_nguoc";
-                        btn_scientific_sec.setImageResource(R.drawable.sec_nguoc);
-                        check_sec = "sec_nguoc";
-                        btn_scientific_csc.setImageResource(R.drawable.csc_nguoc);
-                        check_csc = "csc_nguoc";
-                    }
-                    check_hyp = false;
-                    this.btn_scientific_hyp.setImageResource(R.drawable.hype);
+                    btn_scientific_sin.setImageResource(R.drawable.sin_nguoc);
+                    check_sin = "sin_nguoc";
+                    btn_scientific_cos.setImageResource(R.drawable.cos_nguoc);
+                    check_cos = "cos_nguoc";
+                    btn_scientific_tan.setImageResource(R.drawable.tan_nguoc);
+                    check_tan = "tan_nguoc";
+                    btn_scientific_cot.setImageResource(R.drawable.cot_nguoc);
+                    check_cot = "cot_nguoc";
+                    btn_scientific_sec.setImageResource(R.drawable.sec_nguoc);
+                    check_sec = "sec_nguoc";
+                    btn_scientific_csc.setImageResource(R.drawable.csc_nguoc);
+                    check_csc = "csc_nguoc";
                 }
+                check_hyp = false;
+                this.btn_scientific_hyp.setImageResource(R.drawable.hype);
             }
         });
 
