@@ -37,7 +37,7 @@ public class ScientificFragment extends Fragment {
                 btn_scientific_mod, btn_scientific_factor, btn_scientific_open, btn_scientific_close, btn_scientific_pi,
                 btn_scientific_e,btn_scientific_exp, btn_scientific_deg, btn_scientific_function, btn_scientific_trigonometry,
                 btn_scientific_fe, btn_scientific_mc, btn_scientific_mr, btn_scientific_m_sum, btn_scientific_m_sub,
-                btn_scientific_ms;
+                btn_scientific_ms, btn_scientific_memory;
 
     LinearLayout layout_number, layout_trigonometry, layout_function , layout_2;
 
@@ -95,6 +95,7 @@ public class ScientificFragment extends Fragment {
         btn_scientific_ms.setEnabled(false);
         btn_scientific_trigonometry.setEnabled(false);
         btn_scientific_function.setEnabled(false);
+        btn_scientific_memory.setEnabled(false);
 
         btn_scientific_log.setImageResource(R.drawable.log_mo_2);
         btn_scientific_ln.setImageResource(R.drawable.ln_mo_2);
@@ -138,6 +139,7 @@ public class ScientificFragment extends Fragment {
         btn_scientific_m_sum.setImageResource(R.drawable.msum_mo_2);
         btn_scientific_ms.setImageResource(R.drawable.ms_mo_2);
         btn_scientific_trigonometry.setImageResource(R.drawable.trigo_mo_2);
+        btn_scientific_memory.setImageResource(R.drawable.memory_mo_3);
         btn_scientific_function.setImageResource(R.drawable.function_mo_2);
         layout_2.setBackgroundColor(getResources().getColor(R.color.ground));
 
@@ -176,6 +178,7 @@ public class ScientificFragment extends Fragment {
         btn_scientific_ms.setEnabled(true);
         btn_scientific_trigonometry.setEnabled(true);
         btn_scientific_function.setEnabled(true);
+        btn_scientific_memory.setEnabled(true);
 
         btn_scientific_log.setImageResource(R.drawable.log);
         btn_scientific_ln.setImageResource(R.drawable.ln);
@@ -208,6 +211,7 @@ public class ScientificFragment extends Fragment {
         btn_scientific_ms.setImageResource(R.drawable.ms_2);
         btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
         btn_scientific_function.setImageResource(R.drawable.function);
+        btn_scientific_memory.setImageResource(R.drawable.memory_3);
         layout_2.setBackgroundColor(getResources().getColor(R.color.ground_start));
         check_error = false;
         open = 0;
@@ -297,6 +301,7 @@ public class ScientificFragment extends Fragment {
         btn_scientific_floor = view.findViewById(R.id.btn_scientific_floor);
         btn_scientific_abs_min = view.findViewById(R.id.btn_scientific_abs_min);
         btn_scientific_rand = view.findViewById(R.id.btn_scientific_rand);
+        btn_scientific_memory = view.findViewById(R.id.btn_scientific_memory);
 
         txt_scientific_screen = view.findViewById(R.id.txt_scientific_screen);
         txt_scientific_mainscreen = view.findViewById(R.id.txt_scientific_mainscreen);
@@ -329,6 +334,96 @@ public class ScientificFragment extends Fragment {
         check_nd_min  = false; check_hyp = false; check_deg = true;
         btn_scientific_close.setEnabled(false);
 
+        // ImageButton mc
+        btn_scientific_mc.setOnClickListener(btn_scientific_mc->{
+            if(check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
+        // ImageButton mr
+        btn_scientific_mr.setOnClickListener(btn_scientific_mr -> {
+            if (check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
+        // ImageButton m_sum
+        btn_scientific_m_sum.setOnClickListener(btn_scientific_m_sum -> {
+            if (check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
+        // ImageButton m_sub
+        btn_scientific_m_sub.setOnClickListener(btn_scientific_m_sub -> {
+            if (check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
+        // ImageButton ms
+        btn_scientific_ms.setOnClickListener(btn_scientific_ms -> {
+            if (check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
+        // ImageButton memory
+        btn_scientific_memory.setOnClickListener(btn_scientific_memory -> {
+            if (check_function || check_trigonometry) {
+                if (check_trigonometry) {
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
+            }
+        });
+
         // ImageButton 2_nd_min
         btn_scientific_2_nd_min.setOnClickListener(btn_scientific_2_nd_min->{
             if(!check_nd_min){
@@ -345,8 +440,6 @@ public class ScientificFragment extends Fragment {
                     check_sec = "sec_nguoc";
                     btn_scientific_csc.setImageResource(R.drawable.csc_nguoc);
                     check_csc = "csc_nguoc";
-                    check_nd_min = true;
-                    this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min_dam);
                 } else {
                     btn_scientific_sin.setImageResource(R.drawable.sinh_nguoc);
                     check_sin = "sinh_nguoc";
@@ -360,9 +453,9 @@ public class ScientificFragment extends Fragment {
                     check_sec = "sech_nguoc";
                     btn_scientific_csc.setImageResource(R.drawable.csch_nguoc);
                     check_csc = "csch_nguoc";
-                    check_nd_min = true;
-                    this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min_dam);
                 }
+                check_nd_min = true;
+                this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min_dam);
             } else {
                 if(!check_hyp){
                     btn_scientific_sin.setImageResource(R.drawable.sin);
@@ -377,8 +470,6 @@ public class ScientificFragment extends Fragment {
                     check_sec = "sec";
                     btn_scientific_csc.setImageResource(R.drawable.csc);
                     check_csc = "csc";
-                    check_nd_min = false;
-                    this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min);
                 } else {
                     btn_scientific_sin.setImageResource(R.drawable.sinh);
                     check_sin = "sinh";
@@ -392,76 +483,84 @@ public class ScientificFragment extends Fragment {
                     check_sec = "sech";
                     btn_scientific_csc.setImageResource(R.drawable.csch);
                     check_csc = "csch";
-                    check_nd_min = false;
-                    this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min);
                 }
+                check_nd_min = false;
+                this.btn_scientific_2_nd_min.setImageResource(R.drawable.two_nd_min);
             }
         });
 
         // ImageButton hyp
         btn_scientific_hyp.setOnClickListener(btn_scientific_hyp->{
-            if(!check_hyp){
-                if(!check_nd_min){
-                    btn_scientific_sin.setImageResource(R.drawable.sinh);
-                    check_sin = "sinh";
-                    btn_scientific_cos.setImageResource(R.drawable.cosh);
-                    check_cos = "cosh";
-                    btn_scientific_tan.setImageResource(R.drawable.tanh);
-                    check_tan = "tanh";
-                    btn_scientific_cot.setImageResource(R.drawable.coth);
-                    check_cot = "coth";
-                    btn_scientific_sec.setImageResource(R.drawable.sech);
-                    check_sec = "sech";
-                    btn_scientific_csc.setImageResource(R.drawable.csch);
-                    check_csc = "csch";
-                    check_hyp = true;
-                    this.btn_scientific_hyp.setImageResource(R.drawable.hype_dam);
+            if(check_function || check_trigonometry){
+                if(check_trigonometry){
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
                 } else {
-                    btn_scientific_sin.setImageResource(R.drawable.sinh_nguoc);
-                    check_sin = "sinh_nguoc";
-                    btn_scientific_cos.setImageResource(R.drawable.cosh_nguoc);
-                    check_cos = "cosh_nguoc";
-                    btn_scientific_tan.setImageResource(R.drawable.tanh_nguoc);
-                    check_tan = "tanh_nguoc";
-                    btn_scientific_cot.setImageResource(R.drawable.coth_nguoc);
-                    check_cot = "coth_nguoc";
-                    btn_scientific_sec.setImageResource(R.drawable.sech_nguoc);
-                    check_sec = "sech_nguoc";
-                    btn_scientific_csc.setImageResource(R.drawable.csch_nguoc);
-                    check_csc = "csch_nguoc";
-                    check_hyp = true;
-                    this.btn_scientific_hyp.setImageResource(R.drawable.hype_dam);
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
                 }
             } else {
-                if(!check_nd_min){
-                    btn_scientific_sin.setImageResource(R.drawable.sin);
-                    check_sin = "sin";
-                    btn_scientific_cos.setImageResource(R.drawable.cos);
-                    check_cos = "cos";
-                    btn_scientific_tan.setImageResource(R.drawable.tan);
-                    check_tan = "tan";
-                    btn_scientific_cot.setImageResource(R.drawable.cot);
-                    check_cot = "cot";
-                    btn_scientific_sec.setImageResource(R.drawable.sec);
-                    check_sec = "sec";
-                    btn_scientific_csc.setImageResource(R.drawable.csc);
-                    check_csc = "csc";
-                    check_hyp = false;
-                    this.btn_scientific_hyp.setImageResource(R.drawable.hype);
+                if (!check_hyp) {
+                    if (!check_nd_min) {
+                        btn_scientific_sin.setImageResource(R.drawable.sinh);
+                        check_sin = "sinh";
+                        btn_scientific_cos.setImageResource(R.drawable.cosh);
+                        check_cos = "cosh";
+                        btn_scientific_tan.setImageResource(R.drawable.tanh);
+                        check_tan = "tanh";
+                        btn_scientific_cot.setImageResource(R.drawable.coth);
+                        check_cot = "coth";
+                        btn_scientific_sec.setImageResource(R.drawable.sech);
+                        check_sec = "sech";
+                        btn_scientific_csc.setImageResource(R.drawable.csch);
+                        check_csc = "csch";
+                    } else {
+                        btn_scientific_sin.setImageResource(R.drawable.sinh_nguoc);
+                        check_sin = "sinh_nguoc";
+                        btn_scientific_cos.setImageResource(R.drawable.cosh_nguoc);
+                        check_cos = "cosh_nguoc";
+                        btn_scientific_tan.setImageResource(R.drawable.tanh_nguoc);
+                        check_tan = "tanh_nguoc";
+                        btn_scientific_cot.setImageResource(R.drawable.coth_nguoc);
+                        check_cot = "coth_nguoc";
+                        btn_scientific_sec.setImageResource(R.drawable.sech_nguoc);
+                        check_sec = "sech_nguoc";
+                        btn_scientific_csc.setImageResource(R.drawable.csch_nguoc);
+                        check_csc = "csch_nguoc";
+                    }
+                    check_hyp = true;
+                    this.btn_scientific_hyp.setImageResource(R.drawable.hype_dam);
                 } else {
-                    btn_scientific_sin.setImageResource(R.drawable.sin_nguoc);
-                    check_sin = "sin_nguoc";
-                    btn_scientific_cos.setImageResource(R.drawable.cos_nguoc);
-                    check_cos = "cos_nguoc";
-                    btn_scientific_tan.setImageResource(R.drawable.tan_nguoc);
-                    check_tan = "tan_nguoc";
-                    btn_scientific_cot.setImageResource(R.drawable.cot_nguoc);
-                    check_cot = "cot_nguoc";
-                    btn_scientific_sec.setImageResource(R.drawable.sec_nguoc);
-                    check_sec = "sec_nguoc";
-                    btn_scientific_csc.setImageResource(R.drawable.csc_nguoc);
-                    check_csc = "csc_nguoc";
-                    check_hyp= false;
+                    if (!check_nd_min) {
+                        btn_scientific_sin.setImageResource(R.drawable.sin);
+                        check_sin = "sin";
+                        btn_scientific_cos.setImageResource(R.drawable.cos);
+                        check_cos = "cos";
+                        btn_scientific_tan.setImageResource(R.drawable.tan);
+                        check_tan = "tan";
+                        btn_scientific_cot.setImageResource(R.drawable.cot);
+                        check_cot = "cot";
+                        btn_scientific_sec.setImageResource(R.drawable.sec);
+                        check_sec = "sec";
+                        btn_scientific_csc.setImageResource(R.drawable.csc);
+                        check_csc = "csc";
+                    } else {
+                        btn_scientific_sin.setImageResource(R.drawable.sin_nguoc);
+                        check_sin = "sin_nguoc";
+                        btn_scientific_cos.setImageResource(R.drawable.cos_nguoc);
+                        check_cos = "cos_nguoc";
+                        btn_scientific_tan.setImageResource(R.drawable.tan_nguoc);
+                        check_tan = "tan_nguoc";
+                        btn_scientific_cot.setImageResource(R.drawable.cot_nguoc);
+                        check_cot = "cot_nguoc";
+                        btn_scientific_sec.setImageResource(R.drawable.sec_nguoc);
+                        check_sec = "sec_nguoc";
+                        btn_scientific_csc.setImageResource(R.drawable.csc_nguoc);
+                        check_csc = "csc_nguoc";
+                    }
+                    check_hyp = false;
                     this.btn_scientific_hyp.setImageResource(R.drawable.hype);
                 }
             }
@@ -469,84 +568,80 @@ public class ScientificFragment extends Fragment {
 
         // ImageButton deg
         btn_scientific_deg.setOnClickListener(btn_scientific_deg->{
-            if(check_deg){
-                check_deg = false;
-                this.btn_scientific_deg.setImageResource(R.drawable.rad);
+            if(check_function || check_trigonometry){
+                if(check_trigonometry){
+                    layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
+                    check_trigonometry = false;
+                } else {
+                    layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
+                    check_function = false;
+                }
             } else {
-                check_deg = true;
-                this.btn_scientific_deg.setImageResource(R.drawable.deg);
+                if (check_deg) {
+                    check_deg = false;
+                    this.btn_scientific_deg.setImageResource(R.drawable.rad);
+                } else {
+                    check_deg = true;
+                    this.btn_scientific_deg.setImageResource(R.drawable.deg);
+                }
+                balanNew.setDegOrRad(check_deg);
             }
-            balanNew.setDegOrRad(check_deg);
         });
 
         // ImageButton sin
         btn_scientific_sin.setOnClickListener(btn_scientific_sin->{
-            if(check_sin.equals("sin")){
-                if (checkResult_scientific) {
-                    scientific_screen = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
+            switch (check_sin) {
+                case "sin":
+                    if (checkResult_scientific) {
+                        scientific_screen = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
-                        chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    } else {
-                        scientific_screen += "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    }
-                }
-            } else if(check_sin.equals("sin_nguoc")){
-                if (checkResult_scientific) {
-                    scientific_screen = "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                    if( t < -1 || t > 1){
-                        txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
-                        Error();
-                    } else {
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                    }
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    } else {
+                        scientific_screen += "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
-                        chain = "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                    }
+                    break;
+                case "sin_nguoc":
+                    if (checkResult_scientific) {
+                        scientific_screen = "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
                         double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                        if( t < -1 || t > 1){
+                        if (t < -1 || t > 1) {
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                         }
                     } else {
                         scientific_screen += "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
                         chain = "arcsin( " + txt_scientific_mainscreen.getText().toString() + " )";
                         double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                        if( t < -1 || t > 1){
+                        if (t < -1 || t > 1) {
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                         }
                     }
-                }
-            } else if(check_sin == "sinh"){
-                scientific_screen = "sinh( " + txt_scientific_mainscreen.getText().toString() + " )";
-                txt_scientific_screen.setText(scientific_screen);
-                double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                Double t = Math.sinh(p);
-                txt_scientific_mainscreen.setText(decimalFormat.format(t));
-                scientific_screen = "";
-                sign_scientific = '0';
-                scientific_mainscreen = "";
-                checkResult_scientific = false;
-                checkDot_scientific = false;
-                check_sinh_on = true;
+                    break;
+                case "sinh":
+                    scientific_screen = "sinh( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    txt_scientific_screen.setText(scientific_screen);
+                    double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
+                    Double t = Math.sinh(p);
+                    txt_scientific_mainscreen.setText(decimalFormat.format(t));
+                    scientific_screen = "";
+                    sign_scientific = '0';
+                    scientific_mainscreen = "";
+                    checkResult_scientific = false;
+                    checkDot_scientific = false;
+                    check_sinh_on = true;
+                    break;
             }
             layout_trigonometry.setVisibility(View.INVISIBLE);
             check_trigonometry = false;
@@ -558,72 +653,56 @@ public class ScientificFragment extends Fragment {
 
         // ImageButton cos
         btn_scientific_cos.setOnClickListener(btn_scientific_cos->{
-            if(check_cos.equals("cos")){
-                if (checkResult_scientific) {
-                    scientific_screen = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
+            switch (check_cos) {
+                case "cos":
+                    if (checkResult_scientific) {
+                        scientific_screen = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
-                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    } else {
-                        scientific_screen += "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    }
-                }
-            } else if(check_cos.equals("cos_nguoc")){
-                if (checkResult_scientific) {
-                    scientific_screen = "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                    if( t < -1 || t > 1){
-                        txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
-                        Error();
-                    } else {
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                    }
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    } else {
+                        scientific_screen += "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
-                        chain = "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                    }
+                    break;
+                case "cos_nguoc":
+                    if (checkResult_scientific) {
+                        scientific_screen = "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
                         double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                        if( t < -1 || t > 1){
+                        if (t < -1 || t > 1) {
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                         }
                     } else {
                         scientific_screen += "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
                         chain = "arccos( " + txt_scientific_mainscreen.getText().toString() + " )";
                         double t = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                        if( t < -1 || t > 1){
+                        if (t < -1 || t > 1) {
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                         }
                     }
-                }
-            } else if(check_cos == "cosh"){
-                scientific_screen = "cosh( " + txt_scientific_mainscreen.getText().toString() + " )";
-                txt_scientific_screen.setText(scientific_screen);
-                double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                Double t = Math.cosh(p);
-                txt_scientific_mainscreen.setText(decimalFormat.format(t));
-                scientific_screen = "";
-                sign_scientific = '0';
-                scientific_mainscreen = "";
-                checkResult_scientific = false;
-                checkDot_scientific = false;
-                check_cosh_on = true;
+                    break;
+                case "cosh":
+                    scientific_screen = "cosh( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    txt_scientific_screen.setText(scientific_screen);
+                    double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
+                    Double t = Math.cosh(p);
+                    txt_scientific_mainscreen.setText(decimalFormat.format(t));
+                    scientific_screen = "";
+                    sign_scientific = '0';
+                    scientific_mainscreen = "";
+                    checkResult_scientific = false;
+                    checkDot_scientific = false;
+                    check_cosh_on = true;
+                    break;
             }
             layout_trigonometry.setVisibility(View.INVISIBLE);
             check_trigonometry = false;
@@ -635,72 +714,56 @@ public class ScientificFragment extends Fragment {
 
         // ImageButton tan
         btn_scientific_tan.setOnClickListener(btn_scientific_tan->{
-            if(check_tan.equals("tan")){
-                if (checkResult_scientific) {
-                    scientific_screen = "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    if(balanNew.valueMath(chain).equals("0")) {
-                        txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                        Error();
+            switch (check_tan) {
+                case "tan":
+                    if (checkResult_scientific) {
+                        scientific_screen = "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        if (balanNew.valueMath(chain).equals("0")) {
+                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                            Error();
+                        } else {
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
+                        }
                     } else {
+                        scientific_screen += "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        if (balanNew.valueMath(chain).equals("0")) {
+                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                            Error();
+                        } else {
+                            chain = "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                        }
+                    }
+                    break;
+                case "tan_nguoc":
+                    if (checkResult_scientific) {
+                        scientific_screen = "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                    }
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        if(balanNew.valueMath(chain).equals("0")) {
-                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                            Error();
-                        } else {
-                            chain = "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
                     } else {
-                        scientific_screen += "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        scientific_screen += "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
-                        chain = "cos( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        if(balanNew.valueMath(chain).equals("0")) {
-                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                            Error();
-                        } else {
-                            chain = "tan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
+                        chain = "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
-                }
-            } else if(check_tan.equals("tan_nguoc")){
-                if (checkResult_scientific) {
-                    scientific_screen = "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    break;
+                case "tanh":
+                    scientific_screen = "tanh( " + txt_scientific_mainscreen.getText().toString() + " )";
                     txt_scientific_screen.setText(scientific_screen);
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    } else {
-                        scientific_screen += "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "arctan( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    }
-                }
-            } else if(check_tan == "tanh"){
-                scientific_screen = "tanh( " + txt_scientific_mainscreen.getText().toString() + " )";
-                txt_scientific_screen.setText(scientific_screen);
-                double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                Double t = Math.tanh(p);
-                txt_scientific_mainscreen.setText(decimalFormat.format(t));
-                scientific_screen = "";
-                sign_scientific = '0';
-                scientific_mainscreen = "";
-                checkResult_scientific = false;
-                checkDot_scientific = false;
-                check_tanh_on = true;
+                    double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
+                    Double t = Math.tanh(p);
+                    txt_scientific_mainscreen.setText(decimalFormat.format(t));
+                    scientific_screen = "";
+                    sign_scientific = '0';
+                    scientific_mainscreen = "";
+                    checkResult_scientific = false;
+                    checkDot_scientific = false;
+                    check_tanh_on = true;
+                    break;
             }
             layout_trigonometry.setVisibility(View.INVISIBLE);
             check_trigonometry = false;
@@ -712,95 +775,86 @@ public class ScientificFragment extends Fragment {
 
         // ImageButton cot
         btn_scientific_cot.setOnClickListener(btn_scientific_cot->{
-            if(check_cot.equals("cot")){
-                if (checkResult_scientific) {
-                    scientific_screen = "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    if(balanNew.valueMath(chain).equals("0")) {
-                        txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                        Error();
-                    } else {
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
-                    }
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
+            switch (check_cot) {
+                case "cot":
+                    if (checkResult_scientific) {
+                        scientific_screen = "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_screen.setText(scientific_screen);
                         chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        if(balanNew.valueMath(chain).equals("0")) {
+                        if (balanNew.valueMath(chain).equals("0")) {
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
                             Error();
                         } else {
-                            chain = "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                         }
                     } else {
-                        scientific_screen += "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        if(balanNew.valueMath(chain).equals("0")) {
-                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                            Error();
-                        } else {
+                        if (sign_scientific == '0') {
+                            scientific_screen += "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                            txt_scientific_screen.setText(scientific_screen);
                             chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                            if (balanNew.valueMath(chain).equals("0")) {
+                                txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                                Error();
+                            } else {
+                                chain = "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                                txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                            }
+                        } else {
+                            scientific_screen += "cot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                            txt_scientific_screen.setText(scientific_screen);
+                            chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                            if (balanNew.valueMath(chain).equals("0")) {
+                                txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                                Error();
+                            } else {
+                                chain = "sin( " + txt_scientific_mainscreen.getText().toString() + " )";
+                                txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
+                            }
+                        }
+                    }
+                    break;
+                case "cot_nguoc":
+                    if (checkResult_scientific) {
+                        scientific_screen = "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = txt_scientific_mainscreen.getText().toString();
+                        if (balanNew.valueMath(chain).equals("0")) {
+                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                            Error();
+                        } else {
+                            txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
+                        }
+                    } else {
+                        scientific_screen += "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = txt_scientific_mainscreen.getText().toString();
+                        if (balanNew.valueMath(chain).equals("0")) {
+                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
+                            Error();
+                        } else {
+                            chain = "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                         }
                     }
-                }
-            } else if(check_cot.equals("cot_nguoc")){
-                if (checkResult_scientific) {
-                    scientific_screen = "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    break;
+                case "coth":
+                    scientific_screen = "coth( " + txt_scientific_mainscreen.getText().toString() + " )";
                     txt_scientific_screen.setText(scientific_screen);
-                    chain = txt_scientific_mainscreen.getText().toString();
-                    if(balanNew.valueMath(chain).equals("0")) {
+                    double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
+                    if (Math.sinh(p) == 0) {
                         txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
                         Error();
                     } else {
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
+                        Double t = (Math.cosh(p)) / (Math.sinh(p));
+                        txt_scientific_mainscreen.setText(decimalFormat.format(t));
+                        scientific_screen = "";
+                        sign_scientific = '0';
+                        scientific_mainscreen = "";
+                        checkResult_scientific = false;
+                        checkDot_scientific = false;
+                        check_tanh_on = true;
                     }
-                } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = txt_scientific_mainscreen.getText().toString();
-                        if(balanNew.valueMath(chain).equals("0")) {
-                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                            Error();
-                        } else {
-                            chain = "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
-                    } else {
-                        scientific_screen += "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = txt_scientific_mainscreen.getText().toString();
-                        if(balanNew.valueMath(chain).equals("0")) {
-                            txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                            Error();
-                        } else {
-                            chain = "arccot( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
-                    }
-                }
-            } else if(check_cot == "coth"){
-                scientific_screen = "coth( " + txt_scientific_mainscreen.getText().toString() + " )";
-                txt_scientific_screen.setText(scientific_screen);
-                double p = Double.parseDouble(txt_scientific_mainscreen.getText().toString());
-                if(Math.sinh(p) == 0){
-                    txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
-                    Error();
-                } else {
-                    Double t = (Math.cosh(p)) / (Math.sinh(p));
-                    txt_scientific_mainscreen.setText(decimalFormat.format(t));
-                    scientific_screen = "";
-                    sign_scientific = '0';
-                    scientific_mainscreen = "";
-                    checkResult_scientific = false;
-                    checkDot_scientific = false;
-                    check_tanh_on = true;
-                }
+                    break;
             }
             layout_trigonometry.setVisibility(View.INVISIBLE);
             check_trigonometry = false;
@@ -817,17 +871,10 @@ public class ScientificFragment extends Fragment {
                 txt_scientific_screen.setText(scientific_screen);
                 txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
             } else {
-                if (sign_scientific == '0') {
-                    scientific_screen += "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                } else {
-                    scientific_screen += "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                }
+                scientific_screen += "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_screen.setText(scientific_screen);
+                chain = "ceil( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
             }
             layout_function.setVisibility(View.INVISIBLE);
             check_function = false;
@@ -844,17 +891,10 @@ public class ScientificFragment extends Fragment {
                 txt_scientific_screen.setText(scientific_screen);
                 txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
             } else {
-                if (sign_scientific == '0') {
-                    scientific_screen += "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                } else {
-                    scientific_screen += "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                }
+                scientific_screen += "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_screen.setText(scientific_screen);
+                chain = "floor( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
             }
             layout_function.setVisibility(View.INVISIBLE);
             check_function = false;
@@ -871,17 +911,10 @@ public class ScientificFragment extends Fragment {
                 txt_scientific_screen.setText(scientific_screen);
                 txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
             } else {
-                if (sign_scientific == '0') {
-                    scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                } else {
-                    scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_screen.setText(scientific_screen);
-                    chain = "abs( "  + txt_scientific_mainscreen.getText().toString() + " )";
-                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                }
+                scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_screen.setText(scientific_screen);
+                chain = "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
+                txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
             }
             layout_function.setVisibility(View.INVISIBLE);
             check_function = false;
@@ -907,13 +940,16 @@ public class ScientificFragment extends Fragment {
         btn_scientific_trigonometry.setOnClickListener(btn_scientific_trigonometry ->{
             if(check_function){
                 layout_function.setVisibility(View.INVISIBLE);
+                btn_scientific_function.setImageResource(R.drawable.function);
                 check_function = false;
             } else {
                 if (check_trigonometry) {
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    this.btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_trigonometry.setVisibility(View.VISIBLE);
+                    this.btn_scientific_trigonometry.setImageResource(R.drawable.trigonometry_dam);
                     check_trigonometry = true;
                 }
             }
@@ -923,13 +959,16 @@ public class ScientificFragment extends Fragment {
         btn_scientific_function.setOnClickListener(btn_scientific_function ->{
             if (check_trigonometry) {
                 layout_trigonometry.setVisibility(View.INVISIBLE);
+                btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                 check_trigonometry = false;
             } else {
                 if (check_function) {
                     layout_function.setVisibility(View.INVISIBLE);
+                    this.btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 } else {
                     layout_function.setVisibility(View.VISIBLE);
+                    this.btn_scientific_function.setImageResource(R.drawable.function_dam);
                     check_function = true;
                 }
             }
@@ -940,9 +979,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -986,9 +1027,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1042,9 +1085,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1096,9 +1141,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1149,9 +1196,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1205,9 +1254,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1261,9 +1312,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1314,9 +1367,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1370,9 +1425,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1426,9 +1483,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1482,9 +1541,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1537,9 +1598,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1578,9 +1641,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1626,9 +1691,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1645,9 +1712,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1687,9 +1756,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1697,24 +1768,22 @@ public class ScientificFragment extends Fragment {
                     if (checkResult_scientific) {
                         scientific_screen = "√( " + txt_scientific_mainscreen.getText().toString() + " )";
                         int t = Integer.parseInt(txt_scientific_mainscreen.getText().toString());
+                        txt_scientific_screen.setText(scientific_screen);
                         if (t < 0) {
-                            txt_scientific_screen.setText(scientific_screen);
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
-                            txt_scientific_screen.setText(scientific_screen);
                             txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                         }
 
                     } else {
                         scientific_screen += "√( " + txt_scientific_mainscreen.getText().toString() + " )";
                         int t = Integer.parseInt(txt_scientific_mainscreen.getText().toString());
+                        txt_scientific_screen.setText(scientific_screen);
                         if (t < 0) {
-                            txt_scientific_screen.setText(scientific_screen);
                             txt_scientific_mainscreen.setText(getResources().getString(R.string.Invalid_input));
                             Error();
                         } else {
-                            txt_scientific_screen.setText(scientific_screen);
                             chain = "√( " + txt_scientific_mainscreen.getText().toString() + " )";
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                         }
@@ -1729,17 +1798,10 @@ public class ScientificFragment extends Fragment {
                         txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                     } else {
-                        if (sign_scientific == '0') {
-                            scientific_screen += "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        } else {
-                            scientific_screen += "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
+                        scientific_screen += "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "3ⁿ√( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
                     scientific_mainscreen = "";
                     checkResult_scientific = false;
@@ -1755,9 +1817,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1786,17 +1850,10 @@ public class ScientificFragment extends Fragment {
                         txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                     } else {
-                        if (sign_scientific == '0') {
-                            scientific_screen += "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        } else {
-                            scientific_screen += "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
+                        scientific_screen += "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "e^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
                     scientific_mainscreen = "";
                     checkResult_scientific = false;
@@ -1812,9 +1869,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1888,33 +1947,33 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
                 if (checkResult_scientific) {
                     scientific_screen = "1/( " + txt_scientific_mainscreen.getText().toString() + " )";
                     int t = Integer.parseInt(txt_scientific_mainscreen.getText().toString());
+                    txt_scientific_screen.setText(scientific_screen);
                     if (t == 0) {
-                        txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
                         Error();
                     } else {
-                        txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                     }
 
                 } else {
                     scientific_screen += "1/( " + txt_scientific_mainscreen.getText().toString() + " )";
                     int t = Integer.parseInt(txt_scientific_mainscreen.getText().toString());
+                    txt_scientific_screen.setText(scientific_screen);
                     if (t == 0) {
-                        txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(getResources().getString(R.string.Error_div_0));
                         Error();
                     } else {
-                        txt_scientific_screen.setText(scientific_screen);
                         chain = "1/( " + txt_scientific_mainscreen.getText().toString() + " )";
                         txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
@@ -1931,9 +1990,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -1943,17 +2004,10 @@ public class ScientificFragment extends Fragment {
                         txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                     } else {
-                        if (sign_scientific == '0') {
-                            scientific_screen += "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        } else {
-                            scientific_screen += "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
+                        scientific_screen += "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "10^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
                     scientific_mainscreen = "";
                     checkResult_scientific = false;
@@ -1965,17 +2019,10 @@ public class ScientificFragment extends Fragment {
                         txt_scientific_screen.setText(scientific_screen);
                         txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                     } else {
-                        if (sign_scientific == '0') {
-                            scientific_screen += "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        } else {
-                            scientific_screen += "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_screen.setText(scientific_screen);
-                            chain = "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
-                            txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                        }
+                        scientific_screen += "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_screen.setText(scientific_screen);
+                        chain = "2^( " + txt_scientific_mainscreen.getText().toString() + " )";
+                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                     }
                     scientific_mainscreen = "";
                     checkResult_scientific = false;
@@ -1993,17 +2040,10 @@ public class ScientificFragment extends Fragment {
                     txt_scientific_screen.setText(scientific_screen);
                     txt_scientific_mainscreen.setText(balanNew.valueMath(scientific_screen));
                 } else {
-                    if (sign_scientific == '0') {
-                        scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    } else {
-                        scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_screen.setText(scientific_screen);
-                        chain = "abs( "  + txt_scientific_mainscreen.getText().toString() + " )";
-                        txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                    }
+                    scientific_screen += "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    txt_scientific_screen.setText(scientific_screen);
+                    chain = "abs( " + txt_scientific_mainscreen.getText().toString() + " )";
+                    txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                 }
                 scientific_mainscreen ="";
                 checkResult_scientific = false;
@@ -2016,9 +2056,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2082,9 +2124,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2106,9 +2150,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2145,9 +2191,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2171,9 +2219,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2225,9 +2275,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2300,9 +2352,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2340,9 +2394,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2378,9 +2434,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2531,9 +2589,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2578,9 +2638,6 @@ public class ScientificFragment extends Fragment {
                                 txt_scientific_screen.setText(scientific_screen);
                                 txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                             }
-                            scientific_mainscreen = "";
-                            sign_scientific = '+';
-                            checkDot_scientific = false;
                         } else {
                             scientific_screen += scientific_mainscreen + " + ";
                             chain = scientific_screen.substring(0, scientific_screen.length() - 3);
@@ -2588,10 +2645,10 @@ public class ScientificFragment extends Fragment {
                             chain = chain.replace('÷', '/');
                             txt_scientific_screen.setText(scientific_screen);
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                            scientific_mainscreen = "";
-                            sign_scientific = '+';
-                            checkDot_scientific = false;
                         }
+                        scientific_mainscreen = "";
+                        sign_scientific = '+';
+                        checkDot_scientific = false;
                     } else if (sign_scientific == '-') {
                         scientific_screen = scientific_screen.substring(0, scientific_screen.length() - 3);
                         scientific_screen += " + ";
@@ -2639,9 +2696,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2687,9 +2746,6 @@ public class ScientificFragment extends Fragment {
                                 txt_scientific_screen.setText(scientific_screen);
                                 txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
                             }
-                            scientific_mainscreen = "";
-                            sign_scientific = '-';
-                            checkDot_scientific = false;
                         } else {
                             scientific_screen += scientific_mainscreen + " - ";
                             chain = scientific_screen.substring(0, scientific_screen.length() - 3);
@@ -2697,10 +2753,10 @@ public class ScientificFragment extends Fragment {
                             chain = chain.replace('÷', '/');
                             txt_scientific_screen.setText(scientific_screen);
                             txt_scientific_mainscreen.setText(balanNew.valueMath(chain));
-                            scientific_mainscreen = "";
-                            sign_scientific = '-';
-                            checkDot_scientific = false;
                         }
+                        scientific_mainscreen = "";
+                        sign_scientific = '-';
+                        checkDot_scientific = false;
                     } else if (sign_scientific == '+') {
                         scientific_screen = scientific_screen.substring(0, scientific_screen.length() - 3);
                         scientific_screen += " - ";
@@ -2748,9 +2804,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {
@@ -2849,9 +2907,11 @@ public class ScientificFragment extends Fragment {
             if(check_function || check_trigonometry){
                 if(check_trigonometry){
                     layout_trigonometry.setVisibility(View.INVISIBLE);
+                    btn_scientific_trigonometry.setImageResource(R.drawable.trigo);
                     check_trigonometry = false;
                 } else {
                     layout_function.setVisibility(View.INVISIBLE);
+                    btn_scientific_function.setImageResource(R.drawable.function);
                     check_function = false;
                 }
             } else {

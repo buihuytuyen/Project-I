@@ -649,104 +649,103 @@ public class ProgrammerFragment extends Fragment {
             }
         });
 
-        btn_programmer_open.setOnClickListener(btn_programmer_open -> {
-            if (check_lay_bit_wise) {
-                check_lay_bit_wise = false;
-                lay_programmer_bit_wise.setVisibility(View.INVISIBLE);
-                this.btn_programmer_bit_wise.setImageResource(R.drawable.bitwise);
-            } else {
-                if (check_result_programmer) {
-                    programmer_screen = "( ";
-                    txt_programmer_screen.setText(programmer_screen);
-                    check_result_programmer = false;
-                    if (open == 0) {
-                        this.btn_programmer_open.setImageResource(R.drawable.open_1);
-                        open = 1;
-                    }
-                } else {
-                    if (programmer_screen.length() >= 5) {
-                        char tmp = programmer_screen.charAt(programmer_screen.length() - 1);
-                        if (tmp == ')') {
-                            programmer_screen = "( ";
-                            txt_programmer_screen.setText(programmer_screen);
-                            check_result_programmer = false;
-                            if (open == 0) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_1);
-                                open = 1;
-                            }
-                        } else {
-                            if (open < 5) {
-                                if (open == 0) {
-                                    this.btn_programmer_open.setImageResource(R.drawable.open_1);
-                                } else if (open == 1) {
-                                    this.btn_programmer_open.setImageResource(R.drawable.open_2);
-                                } else if (open == 2) {
-                                    this.btn_programmer_open.setImageResource(R.drawable.open_3);
-                                } else if (open == 3) {
-                                    this.btn_programmer_open.setImageResource(R.drawable.open_4);
-                                } else if (open == 4) {
-                                    this.btn_programmer_open.setImageResource(R.drawable.open_5);
-                                }
-                                programmer_screen += "( ";
-                                txt_programmer_screen.setText(programmer_screen);
-                                open++;
-                            }
-                        }
-                    } else {
-                        if (open < 5) {
-                            if (open == 0) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_1);
-                            } else if (open == 1) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_2);
-                            } else if (open == 2) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_3);
-                            } else if (open == 3) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_4);
-                            } else if (open == 4) {
-                                this.btn_programmer_open.setImageResource(R.drawable.open_5);
-                            }
-                            programmer_screen += "( ";
-                            txt_programmer_screen.setText(programmer_screen);
-                            open++;
-                        }
-                    }
-                }
-                btn_programmer_close.setEnabled(open != 0);
-            }
-        });
-
-        btn_programmer_close.setOnClickListener(btn_programmer_close -> {
-            if (check_lay_bit_wise) {
-                check_lay_bit_wise = false;
-                lay_programmer_bit_wise.setVisibility(View.INVISIBLE);
-                this.btn_programmer_bit_wise.setImageResource(R.drawable.bitwise);
-            } else {
-                if (open >= 1) {
-                    char t = programmer_screen.charAt(programmer_screen.length() - 1);
-                    if (t == ')') {
-                        programmer_screen += " )";
-                    } else {
-                        programmer_screen += txt_programmer_mainscreen.getText().toString() + " )";
-                    }
-                    txt_programmer_mainscreen.setText(balanNew.valueMath(programmer_screen));
-                    txt_programmer_screen.setText(programmer_screen);
-                }
-                if (open == 5) {
-                    btn_programmer_open.setImageResource(R.drawable.open_4);
-                } else if (open == 4) {
-                    btn_programmer_open.setImageResource(R.drawable.open_3);
-                } else if (open == 3) {
-                    btn_programmer_open.setImageResource(R.drawable.open_2);
-                } else if (open == 2) {
-                    btn_programmer_open.setImageResource(R.drawable.open_1);
-                } else if (open == 1) {
-                    btn_programmer_open.setImageResource(R.drawable.open);
-                }
-                open--;
-                this.btn_programmer_close.setEnabled(open != 0);
-            }
-        });
-
+//        btn_programmer_open.setOnClickListener(btn_programmer_open -> {
+//            if (check_lay_bit_wise) {
+//                check_lay_bit_wise = false;
+//                lay_programmer_bit_wise.setVisibility(View.INVISIBLE);
+//                this.btn_programmer_bit_wise.setImageResource(R.drawable.bitwise);
+//            } else {
+//                if (check_result_programmer) {
+//                    programmer_screen = "( ";
+//                    txt_programmer_screen.setText(programmer_screen);
+//                    check_result_programmer = false;
+//                    if (open == 0) {
+//                        this.btn_programmer_open.setImageResource(R.drawable.open_1);
+//                        open = 1;
+//                    }
+//                } else {
+//                    if (programmer_screen.length() >= 5) {
+//                        char tmp = programmer_screen.charAt(programmer_screen.length() - 1);
+//                        if (tmp == ')') {
+//                            programmer_screen = "( ";
+//                            txt_programmer_screen.setText(programmer_screen);
+//                            check_result_programmer = false;
+//                            if (open == 0) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_1);
+//                                open = 1;
+//                            }
+//                        } else {
+//                            if (open < 5) {
+//                                if (open == 0) {
+//                                    this.btn_programmer_open.setImageResource(R.drawable.open_1);
+//                                } else if (open == 1) {
+//                                    this.btn_programmer_open.setImageResource(R.drawable.open_2);
+//                                } else if (open == 2) {
+//                                    this.btn_programmer_open.setImageResource(R.drawable.open_3);
+//                                } else if (open == 3) {
+//                                    this.btn_programmer_open.setImageResource(R.drawable.open_4);
+//                                } else if (open == 4) {
+//                                    this.btn_programmer_open.setImageResource(R.drawable.open_5);
+//                                }
+//                                programmer_screen += "( ";
+//                                txt_programmer_screen.setText(programmer_screen);
+//                                open++;
+//                            }
+//                        }
+//                    } else {
+//                        if (open < 5) {
+//                            if (open == 0) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_1);
+//                            } else if (open == 1) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_2);
+//                            } else if (open == 2) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_3);
+//                            } else if (open == 3) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_4);
+//                            } else if (open == 4) {
+//                                this.btn_programmer_open.setImageResource(R.drawable.open_5);
+//                            }
+//                            programmer_screen += "( ";
+//                            txt_programmer_screen.setText(programmer_screen);
+//                            open++;
+//                        }
+//                    }
+//                }
+//                btn_programmer_close.setEnabled(open != 0);
+//            }
+//        });
+//
+//        btn_programmer_close.setOnClickListener(btn_programmer_close -> {
+//            if (check_lay_bit_wise) {
+//                check_lay_bit_wise = false;
+//                lay_programmer_bit_wise.setVisibility(View.INVISIBLE);
+//                this.btn_programmer_bit_wise.setImageResource(R.drawable.bitwise);
+//            } else {
+//                if (open >= 1) {
+//                    char t = programmer_screen.charAt(programmer_screen.length() - 1);
+//                    if (t == ')') {
+//                        programmer_screen += " )";
+//                    } else {
+//                        programmer_screen += txt_programmer_mainscreen.getText().toString() + " )";
+//                    }
+//                    txt_programmer_mainscreen.setText(balanNew.valueMath(programmer_screen));
+//                    txt_programmer_screen.setText(programmer_screen);
+//                }
+//                if (open == 5) {
+//                    btn_programmer_open.setImageResource(R.drawable.open_4);
+//                } else if (open == 4) {
+//                    btn_programmer_open.setImageResource(R.drawable.open_3);
+//                } else if (open == 3) {
+//                    btn_programmer_open.setImageResource(R.drawable.open_2);
+//                } else if (open == 2) {
+//                    btn_programmer_open.setImageResource(R.drawable.open_1);
+//                } else if (open == 1) {
+//                    btn_programmer_open.setImageResource(R.drawable.open);
+//                }
+//                open--;
+//                this.btn_programmer_close.setEnabled(open != 0);
+//            }
+//        });
         btn_programmer_0.setOnClickListener(btn_programmer_0 -> {
             if (check_lay_bit_wise) {
                 check_lay_bit_wise = false;
@@ -786,7 +785,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_decScreen);
@@ -820,7 +819,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_hexScreen);
@@ -854,7 +853,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_octScreen);
@@ -889,7 +888,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(FormatString(programmer_binScreen));
@@ -930,7 +929,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_decScreen);
@@ -970,7 +969,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_hexScreen);
@@ -1010,7 +1009,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_octScreen);
@@ -1051,7 +1050,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(FormatString(programmer_binScreen));
@@ -1104,7 +1103,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_decScreen);
@@ -1156,7 +1155,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_hexScreen);
@@ -1208,7 +1207,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(programmer_octScreen);
@@ -1260,7 +1259,7 @@ public class ProgrammerFragment extends Fragment {
                                     }
 
                                     txt_programmer_hex.setText(programmer_hexScreen);
-                                    txt_programmer_bin.setText(FormatString(programmer_binScreen));
+                                    txt_programmer_bin.setText(programmer_binScreen);
                                     txt_programmer_oct.setText(programmer_octScreen);
                                     txt_programmer_dec.setText(programmer_decScreen);
                                     txt_programmer_mainscreen.setText(FormatString(programmer_binScreen));

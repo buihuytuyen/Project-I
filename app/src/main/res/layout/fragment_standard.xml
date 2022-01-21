@@ -55,7 +55,6 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBFAFA"
             android:src="@drawable/mc_1"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -65,7 +64,6 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBFAFA"
             android:src="@drawable/mr_1"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -75,7 +73,6 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBFAFA"
             android:src="@drawable/m_1_1"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -85,7 +82,6 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBFAFA"
             android:src="@drawable/m_1_2"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -95,8 +91,16 @@
             android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:layout_weight="1"
-            android:backgroundTint="#FBFAFA"
             android:src="@drawable/ms_1"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageButton
+            android:id="@+id/btn_standard_memory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/memory_1"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </LinearLayout>

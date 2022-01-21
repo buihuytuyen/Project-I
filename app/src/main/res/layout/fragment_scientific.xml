@@ -118,6 +118,15 @@
             android:src="@drawable/ms_2"
             tools:ignore="SpeakableTextPresentCheck" />
 
+        <ImageButton
+            android:id="@+id/btn_scientific_memory"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/memory_3"
+            tools:ignore="SpeakableTextPresentCheck" />
+
     </LinearLayout>
 
     <LinearLayout

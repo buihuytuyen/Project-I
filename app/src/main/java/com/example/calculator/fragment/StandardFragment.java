@@ -25,7 +25,8 @@ public class StandardFragment extends Fragment {
     ImageButton btn_standard_ce, btn_standard_c ,btn_standard_del;
     ImageButton btn_standard_1_div_x, btn_standard_square, btn_standard_square_root,btn_standard_percent;
     ImageButton btn_standard_sum, btn_standard_sub, btn_standard_mul, btn_standard_div, btn_standard_result;
-    ImageButton btn_standard_mc, btn_standard_mr, btn_standard_m_add , btn_standard_m_sub , btn_standard_ms;
+    ImageButton btn_standard_mc, btn_standard_mr, btn_standard_m_add , btn_standard_m_sub , btn_standard_ms,
+                btn_standard_memory;
 
     ImageButton btn_standard_dot, btn_standard_negate;
     String standard_screen,standard_mainscreen;
@@ -48,6 +49,7 @@ public class StandardFragment extends Fragment {
         btn_standard_mc.setEnabled(false);
         btn_standard_m_add.setEnabled(false);
         btn_standard_m_sub.setEnabled(false);
+        btn_standard_memory.setEnabled(false);
 
         btn_standard_square.setImageResource(R.drawable.square_mo_1);
         btn_standard_square_root.setImageResource(R.drawable.square_root_mo_1);
@@ -64,6 +66,7 @@ public class StandardFragment extends Fragment {
         btn_standard_ms.setImageResource(R.drawable.ms_mo_1);
         btn_standard_m_sub.setImageResource(R.drawable.m_sub_mo_1);
         btn_standard_m_add.setImageResource(R.drawable.m_add_mo_1);
+        btn_standard_memory.setImageResource(R.drawable.memory_mo_1);
 
         check_error = true;
     }
@@ -84,6 +87,7 @@ public class StandardFragment extends Fragment {
         btn_standard_mc.setEnabled(true);
         btn_standard_m_add.setEnabled(true);
         btn_standard_m_sub.setEnabled(true);
+        btn_standard_memory.setEnabled(true);
 
         btn_standard_square.setImageResource(R.drawable.sqr);
         btn_standard_square_root.setImageResource(R.drawable.sqrt);
@@ -100,6 +104,7 @@ public class StandardFragment extends Fragment {
         btn_standard_ms.setImageResource(R.drawable.ms_1);
         btn_standard_m_sub.setImageResource(R.drawable.m_1_2);
         btn_standard_m_add.setImageResource(R.drawable.m_1_1);
+        btn_standard_memory.setImageResource(R.drawable.memory_1);
 
         check_error = false;
     }
@@ -141,6 +146,7 @@ public class StandardFragment extends Fragment {
         btn_standard_mc = view.findViewById(R.id.btn_standard_mc);
         btn_standard_m_add = view.findViewById(R.id.btn_standard_m_add);
         btn_standard_m_sub = view.findViewById(R.id.btn_standard_m_sub);
+        btn_standard_memory = view.findViewById(R.id.btn_standard_memory);
 
         btn_standard_dot = view.findViewById(R.id.btn_standard_dot);
         btn_standard_negate = view.findViewById(R.id.btn_standard_negate);
